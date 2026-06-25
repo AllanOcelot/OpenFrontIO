@@ -17,6 +17,7 @@ interface Entry {
   isMyPlayer: boolean;
   isOnSameTeam: boolean;
   player: PlayerView;
+  color: string;
 }
 
 @customElement("leader-board")
@@ -124,6 +125,7 @@ export class Leaderboard extends LitElement implements Controller {
           myPlayer !== null &&
           (player === myPlayer || player.isOnSameTeam(myPlayer)),
         player: player,
+        color: player.territoryColor().toHex(),
       };
     });
 
@@ -153,6 +155,7 @@ export class Leaderboard extends LitElement implements Controller {
           isMyPlayer: true,
           isOnSameTeam: true,
           player: myPlayer,
+          color: myPlayer.territoryColor().toHex(),
         });
       }
     }
@@ -248,8 +251,9 @@ export class Leaderboard extends LitElement implements Controller {
                   this.players.length - 1
                     ? "border-b border-slate-500"
                     : ""} truncate"
+                  style="background-color: ${player.color}45;"
                 >
-                  ${player.name}
+                    ${player.name}
                 </div>
                 <div
                   class="py-1 md:py-2 text-center ${index <

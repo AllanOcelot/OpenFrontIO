@@ -23,6 +23,7 @@ interface TeamEntry {
   totalCities: string;
   totalScoreSort: number;
   players: PlayerView[];
+  teamColor: string;
 }
 
 @customElement("team-stats")
@@ -118,6 +119,7 @@ export class TeamStats extends LitElement implements Controller {
           totalSAMs: renderNumber(totalSAMs),
           totalWarShips: renderNumber(totalWarShips),
           totalCities: renderNumber(totalCities),
+          teamColor: teamPlayers[0].territoryColor().toHex()
         };
       })
       .sort((a, b) => b.totalScoreSort - a.totalScoreSort);
@@ -193,7 +195,7 @@ export class TeamStats extends LitElement implements Controller {
                       ? "font-bold"
                       : ""}"
                   >
-                    <div class="py-1.5 border-b border-slate-500">
+                    <div class="py-1.5 border-b border-slate-500" style="background-color: ${team.teamColor}45;">
                       ${team.teamName}
                     </div>
                     <div class="py-1.5 border-b border-slate-500">
@@ -216,7 +218,7 @@ export class TeamStats extends LitElement implements Controller {
                       ? "font-bold"
                       : ""}"
                   >
-                    <div class="py-1.5 border-b border-slate-500">
+                    <div class="py-1.5 border-b border-slate-500" style="background-color: ${team.teamColor}45;">
                       ${team.teamName}
                     </div>
                     <div class="py-1.5 border-b border-slate-500">

@@ -141,7 +141,7 @@ export class TeamStats extends LitElement implements Controller {
         >
           <!-- Header -->
           <div class="contents font-bold bg-slate-700/60">
-            <div class="p-1.5 md:p-2.5 text-center border-b border-slate-500">
+            <div class="p-1.5 md:p-2.5 text-center border-b border-slate-500" style="padding-left: 10px;">
               ${translateText("leaderboard.team")}
             </div>
             ${this.showUnits
@@ -195,7 +195,7 @@ export class TeamStats extends LitElement implements Controller {
                       ? "font-bold"
                       : ""}"
                   >
-                    <div class="py-1.5 border-b border-slate-500" style="background-color: ${team.teamColor}45;">
+                    <div class="py-1.5 border-b border-slate-500" style="border-left: 6px solid ${team.teamColor};">
                       ${team.teamName}
                     </div>
                     <div class="py-1.5 border-b border-slate-500">
@@ -218,7 +218,7 @@ export class TeamStats extends LitElement implements Controller {
                       ? "font-bold"
                       : ""}"
                   >
-                    <div class="py-1.5 border-b border-slate-500" style="background-color: ${team.teamColor}45;">
+                    <div class="py-1.5 border-b border-slate-500" style="border-left: 6px solid ${team.teamColor};">
                       ${team.teamName}
                     </div>
                     <div class="py-1.5 border-b border-slate-500">

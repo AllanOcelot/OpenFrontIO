@@ -190,6 +190,7 @@ export class Leaderboard extends LitElement implements Controller {
             </div>
             <div
               class="py-1 md:py-2 text-center border-b border-slate-500 truncate"
+              style="padding-left: 10px;"
             >
               ${translateText("leaderboard.player")}
             </div>
@@ -251,8 +252,7 @@ export class Leaderboard extends LitElement implements Controller {
                   this.players.length - 1
                     ? "border-b border-slate-500"
                     : ""} truncate"
-                  style="background-color: ${player.color}45;"
-                >
+                  style="border-left: 6px solid ${player.color}; padding-left: 4px;">
                     ${player.name}
                 </div>
                 <div
